@@ -27,12 +27,12 @@ class MenuPrincipal(QWidget):
 
         self.btn_ventas = QPushButton("💵 Registrar Venta")
         self.btn_ventas.setStyleSheet("font-size: 18px; padding: 10px;")
-        self.btn_ventas.clicked.connect(lambda: self.abrir_script("src/sales.py"))
+        self.btn_ventas.clicked.connect(lambda: self.abrir_script("sales.py"))
         layout.addWidget(self.btn_ventas)
 
         self.btn_reportes = QPushButton("📊 Ver Reportes")
         self.btn_reportes.setStyleSheet("font-size: 18px; padding: 10px;")
-        self.btn_reportes.clicked.connect(lambda: self.abrir_script("src/reports.py"))
+        self.btn_reportes.clicked.connect(lambda: self.abrir_script("reports.py"))
         layout.addWidget(self.btn_reportes)
 
         self.btn_salir = QPushButton("❌ Salir")
@@ -44,7 +44,7 @@ class MenuPrincipal(QWidget):
 
     def abrir_script(self, ruta):
         ruta_absoluta = os.path.abspath(ruta)
-        subprocess.Popen(["python3", ruta_absoluta])
+        subprocess.Popen(["python", ruta_absoluta])
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
